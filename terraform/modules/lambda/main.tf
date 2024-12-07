@@ -7,3 +7,8 @@ resource "aws_lambda_function" "this" {
   memory_size   = var.memory_size
   tags          = var.commom_tags
 }
+
+resource "aws_lambda_function_url" "this" {
+  function_name      = aws_lambda_function.this.function_name
+  authorization_type = "NONE"
+}
