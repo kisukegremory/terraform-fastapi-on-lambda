@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from src import api
 from mangum import Mangum
 
 app = FastAPI()
@@ -13,6 +14,11 @@ def hello_world():
 @app.get("/squared/{n}")
 def squared(n: int, q: str = None):
     return {"squared": n * n, "context": q}
+
+
+@app.get("/google/")
+def google_health_check():
+    return api.google()
 
 
 if __name__ == "__main__":

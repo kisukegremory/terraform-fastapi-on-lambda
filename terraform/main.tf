@@ -8,9 +8,9 @@ terraform {
 }
 
 module "iam" {
-  source        = "./modules/iam"
-  project_name  = local.project_name
-  commom_tags   = local.common_tags
+  source       = "./modules/iam"
+  project_name = local.project_name
+  commom_tags  = local.common_tags
 }
 
 module "ecr" {
